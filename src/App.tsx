@@ -38,50 +38,14 @@ function App() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Alexa × Dify RAG音声アシスタント",
-      description: "生成AIとAlexaを組み合わせ、自然な対話でRAG検索を実現。日常の情報アクセスをより直感的に。",
-      role: "設計・開発",
-      techStack: ["Dify", "Alexa Skills Kit", "AWS Lambda", "OpenAI"],
+      title: "Sample Project",
+      description: "Sample Description",
+      role: "Sample Role",
+      techStack: ["Sample Tech Stack"],
       link: "https://github.com/example",
       image: "https://via.placeholder.com/600x400/00C19A/ffffff?text=Alexa+×+Dify",
-      learnings: "Voice UIにおける文脈理解の重要性を実感"
+      learnings: "Sample Learnings"
     },
-    {
-      id: 2,
-      title: "企業向けAIワークフロー自動化",
-      description: "業務プロセスに生成AIを組み込み、月間100時間の作業時間削減を実現。",
-      role: "リードエンジニア",
-      techStack: ["Python", "LangChain", "FastAPI", "PostgreSQL"],
-      link: "https://example.com",
-      image: "https://via.placeholder.com/600x400/00C19A/ffffff?text=AI+Workflow",
-    },
-    {
-      id: 3,
-      title: "AIネイティブコミュニティ運営",
-      description: "生成AI活用の実践者が集まるコミュニティを立ち上げ、累計500名が参加。",
-      role: "主催者",
-      techStack: ["Discord", "Notion", "GitHub"],
-      link: "https://example.com",
-      image: "https://via.placeholder.com/600x400/00C19A/ffffff?text=Community",
-    },
-    {
-      id: 4,
-      title: "感情認識チャットボット",
-      description: "ユーザーの感情を理解し、適切なトーンで応答するAIアシスタント。",
-      role: "開発",
-      techStack: ["GPT-4", "Sentiment Analysis", "React", "Node.js"],
-      link: "https://example.com",
-      image: "https://via.placeholder.com/600x400/3B82F6/ffffff?text=Emotion+AI"
-    },
-    {
-      id: 5,
-      title: "AIコード生成ツール",
-      description: "自然言語からコードを生成し、開発効率を向上させるVSCode拡張機能。",
-      role: "開発",
-      techStack: ["TypeScript", "VSCode API", "Codex"],
-      link: "https://example.com",
-      image: "https://via.placeholder.com/600x400/8B5CF6/ffffff?text=Code+Generator"
-    }
   ]
 
   const articles: Article[] = [
@@ -168,7 +132,7 @@ function App() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="glass-card rounded-3xl p-12 text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-              Generative AI, Human Everyday.
+              フクの遊び場
             </h1>
             <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
               生成AIネイティブな体験を追求し、<br />
