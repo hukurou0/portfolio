@@ -9,7 +9,6 @@ interface Project {
   techStack: string[]
   link: string
   image: string
-  highlight?: boolean
   learnings?: string
 }
 
@@ -31,12 +30,12 @@ interface Talk {
   date: string
 }
 
-type ViewType = 'home' | 'featured' | 'projects' | 'articles' | 'talks'
+type ViewType = 'home' | 'projects' | 'articles' | 'talks'
 
 function App() {
   const [currentView, setCurrentView] = useState<ViewType>('home')
 
-  const featuredHighlights: Project[] = [
+  const projects: Project[] = [
     {
       id: 1,
       title: "Alexa × Dify RAG音声アシスタント",
@@ -45,7 +44,6 @@ function App() {
       techStack: ["Dify", "Alexa Skills Kit", "AWS Lambda", "OpenAI"],
       link: "https://github.com/example",
       image: "https://via.placeholder.com/600x400/00C19A/ffffff?text=Alexa+×+Dify",
-      highlight: true,
       learnings: "Voice UIにおける文脈理解の重要性を実感"
     },
     {
@@ -56,7 +54,6 @@ function App() {
       techStack: ["Python", "LangChain", "FastAPI", "PostgreSQL"],
       link: "https://example.com",
       image: "https://via.placeholder.com/600x400/00C19A/ffffff?text=AI+Workflow",
-      highlight: true
     },
     {
       id: 3,
@@ -66,12 +63,7 @@ function App() {
       techStack: ["Discord", "Notion", "GitHub"],
       link: "https://example.com",
       image: "https://via.placeholder.com/600x400/00C19A/ffffff?text=Community",
-      highlight: true
-    }
-  ]
-
-  const projects: Project[] = [
-    ...featuredHighlights,
+    },
     {
       id: 4,
       title: "感情認識チャットボット",
@@ -213,7 +205,7 @@ function App() {
                   <p className="text-sm text-gray-500 mt-1">社会へ届ける具体的な成果物</p>
                 </div>
                 <button
-                  onClick={() => setCurrentView('featured')}
+                  onClick={() => setCurrentView('projects')}
                   className="text-[#00C19A] hover:text-[#00A884] font-medium flex items-center gap-1"
                 >
                   View All
@@ -223,7 +215,7 @@ function App() {
                 </button>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {featuredHighlights.slice(0, 3).map((project) => (
+                {projects.slice(0, 3).map((project) => (
                   <div key={project.id} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
                     <img
                       src={project.image}
@@ -295,7 +287,7 @@ function App() {
             <section>
               <div className="flex justify-between items-center mb-8">
                 <div>
-                  <h2 className="text-2xl font-bold text-[#1A1B1E]">Talks</h2>
+                  <h2 className="text-2xl font-bold text-[#1A1B1E]">Talks / Slide Decks</h2>
                   <p className="text-sm text-gray-500 mt-1">カンファレンスやミートアップでの発表資料</p>
                 </div>
                 <button
@@ -336,67 +328,6 @@ function App() {
           </div>
         )}
         
-        {/* Featured Highlights */}
-        {currentView === 'featured' && (
-          <div className="space-y-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-[#1A1B1E] mb-4">Featured Highlights</h2>
-              <p className="text-lg text-gray-600">初訪問者にまず見せたい "推し" プロジェクト</p>
-            </div>
-            <div className="grid gap-8">
-              {featuredHighlights.map((project) => (
-                <a
-                  key={project.id}
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block"
-                >
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                    <div className="md:flex">
-                      <div className="md:w-2/5">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-64 md:h-full object-cover"
-                        />
-                      </div>
-                      <div className="p-8 md:w-3/5">
-                        <div className="flex items-center gap-3 mb-4">
-                          <span className="inline-block px-4 py-2 bg-[#00C19A] text-white text-base font-bold rounded-full">
-                            {project.role}
-                          </span>
-                          {project.learnings && (
-                            <span className="text-sm text-gray-500">
-                              💡 {project.learnings}
-                            </span>
-                          )}
-                        </div>
-                        <h3 className="text-2xl font-bold text-[#1A1B1E] mb-3 group-hover:text-[#00C19A] transition-colors">
-                          {project.title}
-                        </h3>
-                        <p className="text-gray-600 mb-4 leading-relaxed">
-                          {project.description}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {project.techStack.map((tech) => (
-                            <span
-                              key={tech}
-                              className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
-
         {/* All Projects */}
         {currentView === 'projects' && (
           <div className="space-y-8">
@@ -424,9 +355,6 @@ function App() {
                         <span className="inline-block px-3 py-1.5 bg-[#00C19A] text-white text-sm font-bold rounded">
                           {project.role}
                         </span>
-                        {project.highlight && (
-                          <span className="text-yellow-500">⭐</span>
-                        )}
                       </div>
                       <h3 className="text-xl font-semibold text-[#1A1B1E] mb-2 group-hover:text-[#00C19A] transition-colors">
                         {project.title}
@@ -505,7 +433,7 @@ function App() {
         {currentView === 'talks' && (
           <div className="space-y-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-[#1A1B1E] mb-4">Talks & Slide Decks</h2>
+              <h2 className="text-3xl font-bold text-[#1A1B1E] mb-4">Talks / Slide Decks</h2>
               <p className="text-lg text-gray-600">カンファレンスやミートアップでの発表資料</p>
             </div>
             <div className="grid gap-6">
