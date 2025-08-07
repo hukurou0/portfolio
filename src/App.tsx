@@ -87,28 +87,20 @@ function App() {
   const articles: Article[] = [
     {
       id: 1,
-      title: "生成AIを「当たり前」にする設計思想",
-      description: "AIネイティブなプロダクト設計において重要な3つの原則について考察。",
-      link: "https://note.com/example",
-      date: "2024-01-20",
-      tags: ["AI/UX", "プロダクト設計"]
+      title: "なぜエンジニアにDifyを勧めるのか",
+      description: "AIを使った「コアロジック」と「インターフェース」を分離するためのDify",
+      link: "https://note.com/huku_developer/n/n94aefcf62042",
+      date: "2025-03-07",
+      tags: ["Dify", "AI UX"]
     },
     {
       id: 2,
-      title: "RAGシステムの精度を10倍にした話",
-      description: "エンベディングの工夫とプロンプトエンジニアリングで劇的な改善を実現。",
-      link: "https://note.com/example",
-      date: "2024-01-15",
-      tags: ["RAG", "技術解説"]
+      title: "生成AIの本質は生成機能ではない",
+      description: "コンピュータの知能化としての生成AI",
+      link: "https://note.com/huku_developer/n/n7d67f84c96fb",
+      date: "2024-07-27",
+      tags: ["知能"]
     },
-    {
-      id: 3,
-      title: "Voice UIの未来 - AlexaとGPTの融合",
-      description: "音声インターフェースに生成AIを組み込む際の課題と可能性。",
-      link: "https://note.com/example",
-      date: "2024-01-10",
-      tags: ["Voice UX", "Alexa"]
-    }
   ]
 
   const talks: Talk[] = [
@@ -206,7 +198,7 @@ function App() {
                 </div>
                 <button
                   onClick={() => setCurrentView('projects')}
-                  className="text-[#00C19A] hover:text-[#00A884] font-medium flex items-center gap-1"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black border-2 border-gray-300 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium"
                 >
                   View All
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -242,8 +234,8 @@ function App() {
                   <p className="text-sm text-gray-500 mt-1">AIネイティブなソフトウェアとその未来について</p>
                 </div>
                 <button
-                  onClick={() => setCurrentView('articles')}
-                  className="text-[#00C19A] hover:text-[#00A884] font-medium flex items-center gap-1"
+                  onClick={() => window.open('https://note.com/huku_developer', '_blank')}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black border-2 border-gray-300 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium"
                 >
                   View All
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -251,7 +243,7 @@ function App() {
                   </svg>
                 </button>
               </div>
-              <div className="grid gap-6">
+              <div className="grid md:grid-cols-2 gap-6">
                 {articles.slice(0, 2).map((article) => (
                   <a
                     key={article.id}
@@ -260,22 +252,20 @@ function App() {
                     rel="noopener noreferrer"
                     className="group"
                   >
-                    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 transition-all duration-200 hover:shadow-md">
-                      <div className="flex justify-between items-start mb-3">
-                        <h3 className="text-lg font-semibold text-[#1A1B1E] group-hover:text-[#00C19A] transition-colors flex-1">
-                          {article.title}
-                        </h3>
-                        <span className="text-sm text-gray-500 ml-4">{article.date}</span>
+                    <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                      <div className="w-full h-48 bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center">
+                        <svg className="w-20 h-20 text-[#00C19A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
                       </div>
-                      <p className="text-gray-600 text-sm mb-3">{article.description}</p>
-                      <div className="flex gap-2">
+                      <div className="p-6">
                         {article.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-3 py-1.5 bg-[#00C19A] text-white rounded-full text-sm font-semibold">
+                          <span className="inline-block px-3 py-1.5 bg-[#00C19A] text-white text-sm font-bold rounded mb-3 mr-2">
                             {tag}
                           </span>
                         ))}
+                        <h3 className="text-lg font-semibold text-[#1A1B1E] mb-2">{article.title}</h3>
+                        <p className="text-gray-600 text-sm line-clamp-2">{article.description}</p>
                       </div>
                     </div>
                   </a>
@@ -292,7 +282,7 @@ function App() {
                 </div>
                 <button
                   onClick={() => setCurrentView('talks')}
-                  className="text-[#00C19A] hover:text-[#00A884] font-medium flex items-center gap-1"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black border-2 border-gray-300 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium"
                 >
                   View All
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -392,7 +382,7 @@ function App() {
               <h2 className="text-3xl font-bold text-[#1A1B1E] mb-4">Articles</h2>
               <p className="text-lg text-gray-600">AIネイティブなソフトウェアとその未来について</p>
             </div>
-            <div className="grid gap-6">
+            <div className="grid md:grid-cols-2 gap-6">
               {articles.map((article) => (
                 <a
                   key={article.id}
@@ -401,26 +391,37 @@ function App() {
                   rel="noopener noreferrer"
                   className="group"
                 >
-                  <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 transition-all duration-200 hover:shadow-md hover:-translate-y-1">
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-xl font-semibold text-[#1A1B1E] group-hover:text-[#00C19A] transition-colors flex-1">
+                  <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-1">
+                    <div className="w-full h-48 bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center">
+                      <svg className="w-20 h-20 text-[#00C19A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                      </svg>
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="inline-block px-3 py-1.5 bg-[#00C19A] text-white text-sm font-bold rounded">
+                          Article
+                        </span>
+                        <span className="text-sm text-gray-500">
+                          {article.date}
+                        </span>
+                      </div>
+                      <h3 className="text-xl font-semibold text-[#1A1B1E] mb-2 group-hover:text-[#00C19A] transition-colors">
                         {article.title}
                       </h3>
-                      <span className="text-sm text-gray-500 ml-4">
-                        {article.date}
-                      </span>
-                    </div>
-                    <p className="text-gray-600 mb-4">
-                      {article.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {article.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-4 py-2 bg-[#00C19A] text-white rounded-full text-base font-bold">
-                          {tag}
-                        </span>
-                      ))}
+                      <p className="text-gray-600 mb-4 text-sm">
+                        {article.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {article.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </a>
