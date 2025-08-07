@@ -198,7 +198,7 @@ function App() {
                 </div>
                 <button
                   onClick={() => setCurrentView('projects')}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black border-2 border-gray-300 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-gray-700 border border-gray-400 rounded-lg shadow-sm hover:border-[#00C19A] hover:text-[#00C19A] hover:shadow-md transition-all text-sm font-medium"
                 >
                   View All
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -209,11 +209,11 @@ function App() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projects.slice(0, 3).map((project) => (
                   <div key={project.id} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-48 object-cover"
-                    />
+                    <div className="w-full h-48 bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center">
+                      <svg className="w-20 h-20 text-[#00C19A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                    </div>
                     <div className="p-6">
                       <span className="inline-block px-3 py-1.5 bg-[#00C19A] text-white text-sm font-bold rounded mb-3">
                         {project.role}
@@ -235,7 +235,7 @@ function App() {
                 </div>
                 <button
                   onClick={() => window.open('https://note.com/huku_developer', '_blank')}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black border-2 border-gray-300 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-gray-700 border border-gray-400 rounded-lg shadow-sm hover:border-[#00C19A] hover:text-[#00C19A] hover:shadow-md transition-all text-sm font-medium"
                 >
                   View All
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -282,7 +282,7 @@ function App() {
                 </div>
                 <button
                   onClick={() => setCurrentView('talks')}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black border-2 border-gray-300 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-gray-700 border border-gray-400 rounded-lg shadow-sm hover:border-[#00C19A] hover:text-[#00C19A] hover:shadow-md transition-all text-sm font-medium"
                 >
                   View All
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -290,7 +290,7 @@ function App() {
                   </svg>
                 </button>
               </div>
-              <div className="grid gap-6">
+              <div className="grid md:grid-cols-2 gap-6">
                 {talks.slice(0, 2).map((talk) => (
                   <a
                     key={talk.id}
@@ -299,17 +299,20 @@ function App() {
                     rel="noopener noreferrer"
                     className="group"
                   >
-                    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 transition-all duration-200 hover:shadow-md">
-                      <div className="flex justify-between items-start mb-3">
-                        <div>
-                          <h3 className="text-lg font-semibold text-[#1A1B1E] mb-1 group-hover:text-[#00C19A] transition-colors">
-                            {talk.title}
-                          </h3>
-                          <p className="text-sm text-[#00C19A] font-medium">{talk.event}</p>
-                        </div>
-                        <span className="text-sm text-gray-500">{talk.date}</span>
+                    <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                      <div className="w-full h-48 bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center">
+                        <svg className="w-20 h-20 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
+                        </svg>
                       </div>
-                      <p className="text-gray-600 text-sm">{talk.description}</p>
+                      <div className="p-6">
+                        <span className="inline-block px-3 py-1.5 bg-purple-500 text-white text-sm font-bold rounded mb-3">
+                          Talk
+                        </span>
+                        <h3 className="text-lg font-semibold text-[#1A1B1E] mb-2">{talk.title}</h3>
+                        <p className="text-sm text-[#00C19A] font-medium mb-2">{talk.event}</p>
+                        <p className="text-gray-600 text-sm line-clamp-2">{talk.description}</p>
+                      </div>
                     </div>
                   </a>
                 ))}
@@ -335,11 +338,11 @@ function App() {
                   className="group"
                 >
                   <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-1">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-48 object-cover"
-                    />
+                    <div className="w-full h-48 bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center">
+                      <svg className="w-20 h-20 text-[#00C19A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                    </div>
                     <div className="p-6">
                       <div className="flex items-center gap-2 mb-3">
                         <span className="inline-block px-3 py-1.5 bg-[#00C19A] text-white text-sm font-bold rounded">
@@ -437,7 +440,7 @@ function App() {
               <h2 className="text-3xl font-bold text-[#1A1B1E] mb-4">Talks / Slide Decks</h2>
               <p className="text-lg text-gray-600">カンファレンスやミートアップでの発表資料</p>
             </div>
-            <div className="grid gap-6">
+            <div className="grid md:grid-cols-2 gap-6">
               {talks.map((talk) => (
                 <a
                   key={talk.id}
@@ -446,21 +449,29 @@ function App() {
                   rel="noopener noreferrer"
                   className="group"
                 >
-                  <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 transition-all duration-200 hover:shadow-md hover:-translate-y-1">
-                    <div className="flex justify-between items-start mb-3">
-                      <div>
-                        <h3 className="text-xl font-semibold text-[#1A1B1E] mb-2 group-hover:text-[#00C19A] transition-colors">
-                          {talk.title}
-                        </h3>
-                        <p className="text-sm text-[#00C19A] font-medium">{talk.event}</p>
-                      </div>
-                      <span className="text-sm text-gray-500">
-                        {talk.date}
-                      </span>
+                  <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md hover:-translate-y-1">
+                    <div className="w-full h-48 bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center">
+                      <svg className="w-20 h-20 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
+                      </svg>
                     </div>
-                    <p className="text-gray-600">
-                      {talk.description}
-                    </p>
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="inline-block px-3 py-1.5 bg-purple-500 text-white text-sm font-bold rounded">
+                          Talk
+                        </span>
+                        <span className="text-sm text-gray-500">
+                          {talk.date}
+                        </span>
+                      </div>
+                      <h3 className="text-xl font-semibold text-[#1A1B1E] mb-2 group-hover:text-[#00C19A] transition-colors">
+                        {talk.title}
+                      </h3>
+                      <p className="text-sm text-[#00C19A] font-medium mb-3">{talk.event}</p>
+                      <p className="text-gray-600 text-sm">
+                        {talk.description}
+                      </p>
+                    </div>
                   </div>
                 </a>
               ))}
