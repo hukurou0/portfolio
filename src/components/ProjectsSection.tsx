@@ -16,11 +16,11 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
     <>
       {/* All Projects */}
       <section id="projects" className="py-10 md:py-20 scroll-mt-16">
-        <div className="text-center mb-12 glass-card rounded-2xl p-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Projects / Products</h2>
-          <p className="text-lg text-gray-700">社会へ届ける具体的な成果物</p>
+        <div className="text-center mb-8 md:mb-12 glass-card rounded-2xl p-6 md:p-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-4">Projects / Products</h2>
+          <p className="text-base md:text-lg text-gray-700">社会へ届ける具体的な成果物</p>
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-6">
           {displayedProjects.map((project) => (
             <Card
               key={project.id}
@@ -28,9 +28,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
               description={project.description}
               link={project.link}
               variant="project"
-              icon={<CodeIcon className="w-20 h-20 text-purple-600 z-10" />}
-              badge={project.role}
-              badgeColor="text-purple-700"
+              icon={<CodeIcon className="w-12 h-12 md:w-20 md:h-20 text-purple-600 z-10" />}
               tags={project.techStack}
             />
           ))}

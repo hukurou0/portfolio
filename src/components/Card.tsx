@@ -6,8 +6,8 @@ interface CardProps {
   link?: string
   variant: 'project' | 'article' | 'talk'
   icon: ReactNode
-  badge: string
-  badgeColor: string
+  badge?: string
+  badgeColor?: string
   meta?: string
   tags?: string[]
   children?: ReactNode
@@ -38,31 +38,34 @@ export function Card({
   }
 
   const content = (
-    <div className="glass-card rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105">
-      <div className={`w-full h-48 bg-gradient-to-br ${gradientMap[variant]} opacity-20 flex items-center justify-center relative`}>
+    <div className="glass-card rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 h-full flex flex-col">
+      <div className={`w-full h-32 md:h-48 bg-gradient-to-br ${gradientMap[variant]} opacity-20 flex items-center justify-center relative`}>
         {icon}
       </div>
-      <div className="p-6">
+      <div className="p-4 md:p-6 flex-1 flex flex-col">
         <div className="flex items-center gap-2 mb-3">
-          <span className={`inline-block px-3 py-1.5 glass-button rounded-full ${badgeColor} text-sm font-bold`}>
-            {badge}
-          </span>
+          {badge && badgeColor && (
+            <span className={`inline-block px-3 py-1.5 glass-button rounded-full ${badgeColor} text-sm font-bold`}>
+              {badge}
+            </span>
+          )}
           {meta && (
             <span className="text-sm text-gray-600">
               {meta}
             </span>
           )}
         </div>
-        <h3 className={`text-xl font-semibold text-gray-800 mb-2 ${hoverColorMap[variant]} transition-colors`}>
+        <h3 className={`text-base md:text-xl font-semibold text-gray-800 mb-2 ${hoverColorMap[variant]} transition-colors`}>
           {title}
         </h3>
         {description && (
-          <p className="text-gray-700 mb-4 text-sm">
+          <p className="text-gray-700 mb-4 text-xs md:text-sm line-clamp-3">
             {description}
           </p>
         )}
+        <div className="flex-1" />
         {tags && tags.length > 0 && (
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mt-auto">
             {tags.map((tag) => (
               <span
                 key={tag}
@@ -84,7 +87,7 @@ export function Card({
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="group"
+        className="group h-full"
       >
         {content}
       </a>
