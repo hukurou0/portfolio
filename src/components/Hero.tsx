@@ -9,11 +9,11 @@ export function Hero() {
         <div className="absolute top-40 right-20 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float animate-delay-2000"></div>
         <div className="absolute -bottom-8 left-40 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float animate-delay-4000"></div>
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="glass-card rounded-3xl p-12 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
+        <div className="glass-card rounded-3xl p-8 md:p-12 text-center">
+          <h2 className="text-3xl md:text-6xl font-bold text-gray-800 mb-6">
             フクの遊び場
-          </h1>
+          </h2>
           <p className="text-xs sm:text-sm md:text-xl text-gray-700 max-w-3xl mx-auto mb-8">
             生成AIネイティブな体験を追求し、<br />
             AIを人々にとっての「新たな日常」とする。

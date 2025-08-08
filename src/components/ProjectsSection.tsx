@@ -15,7 +15,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
     <>
       {/* All Projects */}
-      <section id="projects" className="py-16 scroll-mt-16">
+      <section id="projects" className="py-10 md:py-20 scroll-mt-16">
         <div className="text-center mb-12 glass-card rounded-2xl p-8">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Projects / Products</h2>
           <p className="text-lg text-gray-700">社会へ届ける具体的な成果物</p>

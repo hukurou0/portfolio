@@ -15,10 +15,10 @@ export function ArticlesSection({ articles }: ArticlesSectionProps) {
   return (
     <>
       {/* All Articles */}
-      <section id="articles" className="py-16 scroll-mt-16">
+      <section id="articles" className="py-10 md:py-20 scroll-mt-16">
         <div className="text-center mb-12 glass-card rounded-2xl p-8">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Articles</h2>
-          <p className="text-lg text-gray-700">AIネイティブなソフトウェアとその未来について</p>
+          <p className="text-lg text-gray-700">AIネイティブなソフトウェアとその未来</p>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {displayedArticles.map((article) => (
