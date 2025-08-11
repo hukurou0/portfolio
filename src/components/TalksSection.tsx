@@ -5,9 +5,11 @@ import { PresentationIcon, ChevronDownIcon, ChevronUpIcon } from './icons'
 
 interface TalksSectionProps {
   talks: Talk[]
+  projects?: any[]
+  articles?: any[]
 }
 
-export function TalksSection({ talks }: TalksSectionProps) {
+export function TalksSection({ talks, projects, articles }: TalksSectionProps) {
   const [showAll, setShowAll] = useState(false)
   const displayCount = 2 // 最初に表示するトーク数
   const reversedTalks = [...talks].reverse()
@@ -28,9 +30,13 @@ export function TalksSection({ talks }: TalksSectionProps) {
               title={talk.title}
               description={talk.event}
               link={talk.slideUrl}
+              links={talk.links}
               variant="talk"
               icon={<PresentationIcon className="w-12 h-12 md:w-20 md:h-20 text-purple-600 z-10" />}
               meta={talk.date}
+              projects={projects}
+              talks={talks}
+              articles={articles}
             >
               <p className="text-gray-700 text-xs md:text-sm mt-2 line-clamp-2">
                 {talk.description}

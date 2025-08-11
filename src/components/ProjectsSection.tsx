@@ -5,9 +5,11 @@ import { CodeIcon, ChevronDownIcon, ChevronUpIcon } from './icons'
 
 interface ProjectsSectionProps {
   projects: Project[]
+  talks?: any[]
+  articles?: any[]
 }
 
-export function ProjectsSection({ projects }: ProjectsSectionProps) {
+export function ProjectsSection({ projects, talks, articles }: ProjectsSectionProps) {
   const [showAll, setShowAll] = useState(false)
   const displayCount = 2 // 最初に表示するプロジェクト数
   const reversedProjects = [...projects].reverse()
@@ -28,9 +30,13 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
               title={project.title}
               description={project.description}
               link={project.link}
+              links={project.links}
               variant="project"
               icon={<CodeIcon className="w-12 h-12 md:w-20 md:h-20 text-purple-600 z-10" />}
               tags={project.techStack}
+              projects={projects}
+              talks={talks}
+              articles={articles}
             />
           ))}
         </div>

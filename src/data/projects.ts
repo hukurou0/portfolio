@@ -1,4 +1,5 @@
 import type { Project } from '../types'
+import { aiWaveLinks } from './links'
 
 export const projects: Project[] = [
   {
@@ -13,7 +14,8 @@ export const projects: Project[] = [
     title: "【イベント】AIの波に乗り遅れるな!!",
     description: "AIアプリ開発を難しいと感じている人に向けて、基盤の考え方を共有しエンジニアを増やすためのオフラインイベント",
     techStack: ["オフラインイベント"],
-    link: "https://github.com/example",
+    link: "https://connpass.com/event/343718/",
+    links: aiWaveLinks,
   },
   {
     id: 3,

@@ -1,4 +1,5 @@
 import type { Talk } from '../types'
+import { aiWaveLinks } from './links'
 
 export const talks: Talk[] = [
   {
@@ -39,7 +40,8 @@ export const talks: Talk[] = [
     event: "自分主催の若手エンジニア向けイベント《AIの波に乗り遅れるな!!》",
     description: "AIアプリ開発を理解し、自分の手段にする",
     slideUrl: "https://speakerdeck.com/huku/ainobo-nicheng-richi-reruna-ai-as-a-tool",
-    date: "2025-02-12"
+    date: "2025-02-12",
+    links: aiWaveLinks
   },
   {
     id: 7,

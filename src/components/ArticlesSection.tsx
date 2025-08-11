@@ -5,9 +5,11 @@ import { BookIcon, ChevronDownIcon, ChevronUpIcon } from './icons'
 
 interface ArticlesSectionProps {
   articles: Article[]
+  projects?: any[]
+  talks?: any[]
 }
 
-export function ArticlesSection({ articles }: ArticlesSectionProps) {
+export function ArticlesSection({ articles, projects, talks }: ArticlesSectionProps) {
   const [showAll, setShowAll] = useState(false)
   const displayCount = 2 // 最初に表示する記事数
   const displayedArticles = showAll ? articles : articles.slice(0, displayCount)
@@ -27,10 +29,14 @@ export function ArticlesSection({ articles }: ArticlesSectionProps) {
               title={article.title}
               description={article.description}
               link={article.link}
+              links={article.links}
               variant="article"
               icon={<BookIcon className="w-12 h-12 md:w-20 md:h-20 text-blue-600 z-10" />}
               meta={article.date}
               tags={article.tags}
+              projects={projects}
+              talks={talks}
+              articles={articles}
             />
           ))}
         </div>

@@ -1,9 +1,13 @@
+import { useState } from 'react'
 import type { ReactNode } from 'react'
+import type { Links } from '../types'
+import { LinkModal } from './LinkModal'
 
 interface CardProps {
   title: string
   description?: string
   link?: string
+  links?: Links
   variant: 'project' | 'article' | 'talk'
   icon: ReactNode
   badge?: string
@@ -11,20 +15,28 @@ interface CardProps {
   meta?: string
   tags?: string[]
   children?: ReactNode
+  projects?: any[]
+  articles?: any[]
+  talks?: any[]
 }
 
 export function Card({
   title,
   description,
   link,
+  links,
   variant,
   icon,
   badge,
   badgeColor,
   meta,
   tags,
-  children
+  children,
+  projects,
+  articles,
+  talks
 }: CardProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const gradientMap = {
     project: 'from-purple-400 to-pink-400',
     article: 'from-blue-400 to-green-400',
@@ -85,6 +97,30 @@ export function Card({
     </div>
   )
 
+  // 複数リンクがある場合はクリックでモーダルを開く
+  if (links && links.links.length > 0) {
+    return (
+      <>
+        <div
+          onClick={() => setIsModalOpen(true)}
+          className="group h-full cursor-pointer"
+        >
+          {content}
+        </div>
+        <LinkModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          links={links}
+          title={title}
+          projects={projects}
+          articles={articles}
+          talks={talks}
+        />
+      </>
+    )
+  }
+
+  // 単一リンクの場合は従来通り
   if (link) {
     return (
       <a
