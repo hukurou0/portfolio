@@ -59,9 +59,13 @@ export function Card({
           {title}
         </h3>
         {description && (
-          <p className="text-gray-700 mb-4 text-xs md:text-sm line-clamp-3">
-            {description}
-          </p>
+          <div className="text-gray-700 mb-4 text-xs md:text-sm line-clamp-3">
+            {description.split('\n').map((line, index) => (
+              <div key={index} className={index > 0 ? 'mt-0.5' : ''}>
+                {line}
+              </div>
+            ))}
+          </div>
         )}
         <div className="flex-1" />
         {tags && tags.length > 0 && (

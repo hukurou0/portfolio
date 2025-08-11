@@ -2,11 +2,8 @@ export interface Project {
   id: number
   title: string
   description: string
-  role: string
   techStack: string[]
   link: string
-  image: string
-  learnings?: string
 }
 
 export interface Article {

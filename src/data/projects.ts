@@ -3,12 +3,31 @@ import type { Project } from '../types'
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Sample Project",
-    description: "Sample Description",
-    role: "Sample Role",
-    techStack: ["Sample Tech Stack"],
-    link: "https://github.com/example",
-    image: "https://via.placeholder.com/600x400/00C19A/ffffff?text=Alexa+×+Dify",
-    learnings: "Sample Learnings"
+    title: "Connect",
+    description: "【思い出枠】初めて公開したWebアプリ\n\n大学の課題を学生達で共有するWebアプリ。対象ユーザの約10%が登録していた。",
+    techStack: ["Web App"],
+    link: "https://www.universitytask.link/",
   },
+  {
+    id: 2,
+    title: "【イベント】AIの波に乗り遅れるな!!",
+    description: "AIアプリ開発を難しいと感じている人に向けて、基盤の考え方を共有しエンジニアを増やすためのオフラインイベント",
+    techStack: ["オフラインイベント"],
+    link: "https://github.com/example",
+  },
+  {
+    id: 3,
+    title: "【OSS】Alexa × Dify",
+    description: "【近日公開】DifyのインターフェースにAlexaを用いることで、より日常に溶け込んだAI体験を作るためのプロジェクト。これを使ったいろいろなユースケース開発を促進するため、OSSとして公開。",
+    techStack: ["OSS", "Alexa", "Dify"],
+    link: "https://github.com/hukurou0/alexa-dify",
+  },
+  {
+    id: 4,
+    title: "【入賞作品】Vibe Planning",
+    description: "ZennとGoogle Cloud開催のAI Agent Hackathonにて161チーム中3位に入賞",
+    techStack: ["AI Agent Hackathon with Google Cloud"],
+    link: "https://github.com/example",
+  },
+
 ]

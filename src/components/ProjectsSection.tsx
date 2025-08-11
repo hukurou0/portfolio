@@ -10,7 +10,8 @@ interface ProjectsSectionProps {
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
   const [showAll, setShowAll] = useState(false)
   const displayCount = 2 // 最初に表示するプロジェクト数
-  const displayedProjects = showAll ? projects : projects.slice(0, displayCount)
+  const reversedProjects = [...projects].reverse()
+  const displayedProjects = showAll ? reversedProjects : reversedProjects.slice(0, displayCount)
 
   return (
     <>
@@ -35,7 +36,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
         </div>
         
         {/* もっと見るボタン */}
-        {projects.length > displayCount && (
+        {reversedProjects.length > displayCount && (
           <div className="flex justify-center mt-8">
             <button
               onClick={() => setShowAll(!showAll)}
@@ -48,7 +49,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                 </>
               ) : (
                 <>
-                  <span>もっと見る ({projects.length - displayCount}件)</span>
+                  <span>もっと見る ({reversedProjects.length - displayCount}件)</span>
                   <ChevronDownIcon />
                 </>
               )}
