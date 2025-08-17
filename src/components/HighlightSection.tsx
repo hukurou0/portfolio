@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { projects } from '../data/projects'
 import { articles } from '../data/articles'
 import { talks } from '../data/talks'
@@ -8,9 +9,9 @@ export function HighlightSection() {
   const highlightTalk = talks[0]
 
   return (
-    <section className="py-10 md:py-20">
+    <section className="pb-10 md:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-8 md:mb-12">
+        <h2 className="text-2xl md:text-4xl font-bold text-center text-gray-800 mb-8 md:mb-12">
           Featured Work
         </h2>
         
@@ -72,6 +73,18 @@ export function HighlightSection() {
               </a>
             </div>
           )}
+        </div>
+        
+        <div className="text-center mt-8 md:mt-12">
+          <Link 
+            to="/works" 
+            className="inline-flex items-center gap-2 px-6 md:px-8 py-3 rounded-xl font-medium text-gray-800 border border-gray-300 glass-button hover:scale-105 transition-all duration-300"
+          >
+            全て見る
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>

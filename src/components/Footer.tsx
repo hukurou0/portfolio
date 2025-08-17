@@ -2,10 +2,9 @@ import { XIcon, MailIcon, LinkedInIcon } from './icons'
 
 export function Footer() {
   return (
-    <footer id="contact" className="relative border-t-2 border-white/50 scroll-mt-16">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-200 via-pink-200 to-blue-200 opacity-60"></div>
-      <div className="relative z-10 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer id="contact" className="relative border-t-2 border-white/20 scroll-mt-16">
+      <div className="relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Let's Create Together</h2>
             <p className="text-lg text-gray-700 mb-8">

@@ -2,7 +2,6 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Hero } from './components/Hero'
 import { Navigation } from './components/Navigation'
-import { Footer } from './components/Footer'
 import { HighlightSection } from './components/HighlightSection'
 import { WorksPage } from './pages/WorksPage'
 
@@ -15,13 +14,11 @@ function App() {
           <Route path="/" element={
             <>
               <Hero />
-              <div className="border-t-2 border-white/50"></div>
               <HighlightSection />
             </>
           } />
           <Route path="/works" element={<WorksPage />} />
         </Routes>
-        <Footer />
       </div>
     </Router>
   )

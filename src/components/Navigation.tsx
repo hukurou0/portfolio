@@ -50,12 +50,6 @@ export function Navigation() {
                 Works
               </Link>
             </div>
-            <a 
-              href="#contact" 
-              className="border border-purple-500 text-purple-600 px-4 py-2 rounded-lg font-medium hover:bg-purple-50 transition-colors"
-            >
-              Contact
-            </a>
           </div>
         </div>
         
@@ -84,13 +78,6 @@ export function Navigation() {
             >
               Works
             </Link>
-            <a 
-              href="#contact" 
-              onClick={() => setIsOpen(false)}
-              className="block text-center border border-purple-500 text-purple-600 px-4 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors"
-            >
-              Contact
-            </a>
           </div>
         )}
       </div>
