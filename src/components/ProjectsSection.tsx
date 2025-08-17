@@ -18,7 +18,7 @@ export function ProjectsSection({ projects, talks, articles }: ProjectsSectionPr
   return (
     <>
       {/* All Projects */}
-      <section id="projects" className="py-10 md:py-20 scroll-mt-16">
+      <section id="projects" className="pt-10 md:pt-20 scroll-mt-16">
         <div className="text-center mb-8 md:mb-12 glass-card rounded-2xl p-6 md:p-8">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-4">Projects / Products</h2>
           <p className="text-base md:text-lg text-gray-700">社会へ届ける具体的な成果物</p>

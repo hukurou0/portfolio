@@ -18,7 +18,7 @@ export function HighlightSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {highlightProject && (
             <div className="glass-card rounded-2xl p-4 md:p-6 hover:scale-105 transition-all duration-300 group">
-              <div className="bg-gradient-to-br from-purple-400 to-pink-400 p-4 rounded-xl mb-4 text-center">
+              <div className="bg-gradient-to-br from-purple-400 to-pink-400 opacity-85 p-4 rounded-xl mb-4 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-white mx-auto">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
                 </svg>
@@ -37,7 +37,7 @@ export function HighlightSection() {
           
           {highlightArticle && (
             <div className="glass-card rounded-2xl p-4 md:p-6 hover:scale-105 transition-all duration-300 group">
-              <div className="bg-gradient-to-br from-blue-400 to-green-400 p-4 rounded-xl mb-4 text-center">
+              <div className="bg-gradient-to-br from-blue-400 to-green-400 opacity-85 p-4 rounded-xl mb-4 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-white mx-auto">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                 </svg>
@@ -56,7 +56,7 @@ export function HighlightSection() {
           
           {highlightTalk && (
             <div className="glass-card rounded-2xl p-4 md:p-6 hover:scale-105 transition-all duration-300 group">
-              <div className="bg-gradient-to-br from-purple-400 to-indigo-400 p-4 rounded-xl mb-4 text-center">
+              <div className="bg-gradient-to-br from-purple-400 to-indigo-400 opacity-85 p-4 rounded-xl mb-4 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-white mx-auto">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
                 </svg>

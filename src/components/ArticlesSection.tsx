@@ -17,7 +17,7 @@ export function ArticlesSection({ articles, projects, talks }: ArticlesSectionPr
   return (
     <>
       {/* All Articles */}
-      <section id="articles" className="py-10 md:py-20 scroll-mt-16">
+      <section id="articles" className="pt-10 md:pt-20 scroll-mt-16">
         <div className="text-center mb-8 md:mb-12 glass-card rounded-2xl p-6 md:p-8">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-4">Articles</h2>
           <p className="text-base md:text-lg text-gray-700">AIネイティブなソフトウェアとその未来</p>
