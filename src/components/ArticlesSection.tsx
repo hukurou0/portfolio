@@ -1,7 +1,6 @@
-import { useState } from 'react'
 import type { Article } from '../types'
 import { Card } from './Card'
-import { BookIcon, ChevronDownIcon, ChevronUpIcon } from './icons'
+import { BookIcon, ChevronDownIcon } from './icons'
 
 interface ArticlesSectionProps {
   articles: Article[]
@@ -10,9 +9,8 @@ interface ArticlesSectionProps {
 }
 
 export function ArticlesSection({ articles, projects, talks }: ArticlesSectionProps) {
-  const [showAll, setShowAll] = useState(false)
   const displayCount = 2 // 最初に表示する記事数
-  const displayedArticles = showAll ? articles : articles.slice(0, displayCount)
+  const displayedArticles = articles.slice(0, displayCount)
 
   return (
     <>
@@ -42,26 +40,17 @@ export function ArticlesSection({ articles, projects, talks }: ArticlesSectionPr
         </div>
         
         {/* もっと見るボタン */}
-        {articles.length > displayCount && (
-          <div className="flex justify-center mt-8">
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="glass-button inline-flex items-center gap-2 px-6 py-3 rounded-xl text-gray-800 font-medium hover:scale-105 transition-transform"
-            >
-              {showAll ? (
-                <>
-                  <span>閉じる</span>
-                  <ChevronUpIcon />
-                </>
-              ) : (
-                <>
-                  <span>もっと見る ({articles.length - displayCount}件)</span>
-                  <ChevronDownIcon />
-                </>
-              )}
-            </button>
-          </div>
-        )}
+        <div className="flex justify-center mt-8">
+          <a
+            href="https://note.com/huku_developer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass-button inline-flex items-center gap-2 px-6 py-3 rounded-xl text-gray-800 font-medium hover:scale-105 transition-transform"
+          >
+            <span>もっと見る</span>
+            <ChevronDownIcon />
+          </a>
+        </div>
       </section>
     </>
   )
