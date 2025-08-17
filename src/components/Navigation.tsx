@@ -1,16 +1,18 @@
 import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const location = useLocation()
 
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-md bg-white/60 border-b border-gray-200/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* ロゴ/ホーム */}
-          <a href="#" className="text-xl font-bold text-gray-800 hover:text-purple-600 transition-colors">
+          <Link to="/" className="text-xl font-bold text-gray-800 hover:text-purple-600 transition-colors">
             Huku
-          </a>
+          </Link>
           
           {/* モバイルメニューボタン */}
           <button
@@ -31,15 +33,22 @@ export function Navigation() {
           {/* デスクトップメニュー */}
           <div className="hidden sm:flex items-center gap-8">
             <div className="flex items-center gap-6">
-              <a href="#projects" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
-                Projects
-              </a>
-              <a href="#articles" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
-                Articles
-              </a>
-              <a href="#talks" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
-                Talks
-              </a>
+              <Link 
+                to="/" 
+                className={`font-medium transition-colors ${
+                  location.pathname === '/' ? 'text-purple-600' : 'text-gray-700 hover:text-purple-600'
+                }`}
+              >
+                Home
+              </Link>
+              <Link 
+                to="/works" 
+                className={`font-medium transition-colors ${
+                  location.pathname === '/works' ? 'text-purple-600' : 'text-gray-700 hover:text-purple-600'
+                }`}
+              >
+                Works
+              </Link>
             </div>
             <a 
               href="#contact" 
@@ -53,27 +62,28 @@ export function Navigation() {
         {/* モバイルメニュー */}
         {isOpen && (
           <div className="sm:hidden pb-4 space-y-2">
-            <a 
-              href="#projects" 
+            <Link 
+              to="/" 
               onClick={() => setIsOpen(false)}
-              className="block text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-colors font-medium px-4 py-3 rounded-lg"
+              className={`block font-medium px-4 py-3 rounded-lg transition-colors ${
+                location.pathname === '/' 
+                  ? 'text-purple-600 bg-purple-50' 
+                  : 'text-gray-700 hover:text-purple-600 hover:bg-purple-50'
+              }`}
             >
-              Projects
-            </a>
-            <a 
-              href="#articles" 
+              Home
+            </Link>
+            <Link 
+              to="/works" 
               onClick={() => setIsOpen(false)}
-              className="block text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-colors font-medium px-4 py-3 rounded-lg"
+              className={`block font-medium px-4 py-3 rounded-lg transition-colors ${
+                location.pathname === '/works' 
+                  ? 'text-purple-600 bg-purple-50' 
+                  : 'text-gray-700 hover:text-purple-600 hover:bg-purple-50'
+              }`}
             >
-              Articles
-            </a>
-            <a 
-              href="#talks" 
-              onClick={() => setIsOpen(false)}
-              className="block text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-colors font-medium px-4 py-3 rounded-lg"
-            >
-              Talks
-            </a>
+              Works
+            </Link>
             <a 
               href="#contact" 
               onClick={() => setIsOpen(false)}
