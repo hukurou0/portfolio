@@ -59,22 +59,14 @@ export function Navigation() {
             <Link 
               to="/" 
               onClick={() => setIsOpen(false)}
-              className={`block font-medium px-4 py-3 rounded-lg transition-colors ${
-                location.pathname === '/' 
-                  ? 'text-purple-600 bg-purple-50' 
-                  : 'text-gray-700 hover:text-purple-600 hover:bg-purple-50'
-              }`}
+              className={`block font-medium px-4 py-3 rounded-lg transition-colors text-purple-600 bg-purple-50'`}
             >
               Home
             </Link>
             <Link 
               to="/works" 
               onClick={() => setIsOpen(false)}
-              className={`block font-medium px-4 py-3 rounded-lg transition-colors ${
-                location.pathname === '/works' 
-                  ? 'text-purple-600 bg-purple-50' 
-                  : 'text-gray-700 hover:text-purple-600 hover:bg-purple-50'
-              }`}
+              className={`block font-medium px-4 py-3 rounded-lg transition-colors text-gray-700 hover:text-purple-600 hover:bg-purple-50`}
             >
               Works
             </Link>
