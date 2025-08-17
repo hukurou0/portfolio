@@ -23,6 +23,7 @@ export const projects: Project[] = [
     description: "【近日公開】DifyのインターフェースにAlexaを用いることで、より日常に溶け込んだAI体験を作るためのプロジェクト。これを使ったいろいろなユースケース開発を促進するため、OSSとして公開。",
     techStack: ["OSS", "Alexa", "Dify"],
     link: "https://github.com/hukurou0/alexa-dify",
+    highlight: true
   },
   {
     id: 4,

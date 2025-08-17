@@ -7,7 +7,8 @@ export const articles: Article[] = [
     description: "AIを使った「コアロジック」と「インターフェース」を分離するためのDify",
     link: "https://note.com/huku_developer/n/n94aefcf62042",
     date: "2025-03-07",
-    tags: ["Dify", "AI UX"]
+    tags: ["Dify", "AI UX"],
+    highlight: true
   },
   {
     id: 2,

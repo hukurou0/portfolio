@@ -4,9 +4,9 @@ import { articles } from '../data/articles'
 import { talks } from '../data/talks'
 
 export function HighlightSection() {
-  const highlightProject = projects[0]
-  const highlightArticle = articles[0]
-  const highlightTalk = talks[0]
+  const highlightProject = projects.find(project => project.highlight)
+  const highlightArticle = articles.find(article => article.highlight)
+  const highlightTalk = talks.find(talk => talk.highlight)
 
   return (
     <section className="pb-10 md:pb-16">

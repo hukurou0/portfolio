@@ -16,6 +16,7 @@ export interface Project {
   techStack: string[]
   link?: string // 後方互換性のため一時的に残す
   links?: Links // 共通リンクへの参照
+  highlight?: boolean
 }
 
 export interface Article {
@@ -26,6 +27,7 @@ export interface Article {
   links?: Links // 共通リンクへの参照
   date: string
   tags: string[]
+  highlight?: boolean
 }
 
 export interface Talk {
@@ -36,4 +38,5 @@ export interface Talk {
   slideUrl?: string // 後方互換性のため一時的に残す
   links?: Links // 共通リンクへの参照
   date: string
+  highlight?: boolean
 }

@@ -36,12 +36,13 @@ export const talks: Talk[] = [
   },
   {
     id: 5,
-    title: "AI as a Tool",
-    event: "自分主催の若手エンジニア向けイベント《AIの波に乗り遅れるな!!》",
+    title: "《AIの波に乗り遅れるな!!》",
+    event: "フク主催の若手エンジニア向けイベント",
     description: "AIアプリ開発を理解し、自分の手段にする",
     slideUrl: "https://speakerdeck.com/huku/ainobo-nicheng-richi-reruna-ai-as-a-tool",
     date: "2025-02-12",
-    links: aiWaveLinks
+    links: aiWaveLinks,
+    highlight: true
   },
   {
     id: 7,
