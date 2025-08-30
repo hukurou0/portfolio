@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
-  const location = useLocation()
 
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-md bg-white/60 border-b border-gray-200/50">
@@ -35,19 +34,15 @@ export function Navigation() {
             <div className="flex items-center gap-6">
               <Link 
                 to="/" 
-                className={`font-medium transition-colors ${
-                  location.pathname === '/' ? 'text-purple-600' : 'text-gray-700 hover:text-purple-600'
-                }`}
+                className="font-medium px-4 py-2 rounded-lg transition-all text-gray-700 hover:text-purple-600 hover:bg-gray-50 border border-transparent hover:border-gray-200"
               >
-                Home
+                ホーム
               </Link>
               <Link 
                 to="/works" 
-                className={`font-medium transition-colors ${
-                  location.pathname === '/works' ? 'text-purple-600' : 'text-gray-700 hover:text-purple-600'
-                }`}
+                className="font-medium px-4 py-2 rounded-lg transition-all text-gray-700 hover:text-purple-600 hover:bg-gray-50 border border-transparent hover:border-gray-200"
               >
-                Works
+                取り組み
               </Link>
             </div>
           </div>
@@ -59,16 +54,16 @@ export function Navigation() {
             <Link 
               to="/" 
               onClick={() => setIsOpen(false)}
-              className={`block font-medium px-4 py-3 rounded-lg transition-colors text-purple-600 bg-purple-50'`}
+              className="block font-medium px-4 py-3 rounded-lg transition-all text-gray-700 hover:text-purple-600 hover:bg-gray-50 border border-gray-200"
             >
-              Home
+              ホーム
             </Link>
             <Link 
               to="/works" 
               onClick={() => setIsOpen(false)}
-              className={`block font-medium px-4 py-3 rounded-lg transition-colors text-gray-700 hover:text-purple-600 hover:bg-purple-50`}
+              className="block font-medium px-4 py-3 rounded-lg transition-all text-gray-700 hover:text-purple-600 hover:bg-gray-50 border border-gray-200"
             >
-              Works
+              取り組み
             </Link>
           </div>
         )}

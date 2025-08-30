@@ -11,9 +11,13 @@ export function HighlightSection() {
   return (
     <section className="pb-10 md:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl md:text-4xl font-bold text-center text-gray-800 mb-8 md:mb-12">
-          Featured Work
-        </h2>
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="inline-block text-2xl md:text-4xl font-bold text-gray-800 relative">
+            <span className="relative z-10">取り組み</span>
+            <span className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-r from-purple-200 to-pink-200 opacity-50 transform -skew-y-1"></span>
+          </h2>
+          <p className="mt-4 text-gray-600 text-sm md:text-base">プロジェクト・記事・登壇のハイライト</p>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {highlightProject && (
